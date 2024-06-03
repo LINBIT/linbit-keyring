@@ -1,0 +1,18 @@
+Source: linbit-keyring
+Section: misc
+Priority: optional
+Maintainer: LINBIT HA Solutions GmbH <drbd-dev@lists.linbit.com>
+Uploaders: Roland Kammerer <roland.kammerer@linbit.com>
+Build-Depends: debhelper-compat (= 9)
+Homepage: https://www.linbit.com
+Standards-Version: 3.9.6
+Vcs-Git: https://github.com/LINBIT/linbit-keyring
+
+Package: linbit-keyring
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Recommends: gnupg (>= 1.0.6-4)
+Description: GnuPG keys of LINBIT package siging keys.
+ LINBIT signins its customer repositories (and public repos) with
+ these keys.

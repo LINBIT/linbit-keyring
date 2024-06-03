@@ -1,0 +1,7 @@
+This repository contains the LINBIT signing keys
+
+Debian: The keys are used to sign repo meta data
+RPM: The keys are used to sign the rpm files and the repo meta data
+
+linbit-keyring-gpg/: Actively used/"supported" keys
+emeritus-keyring-gpg/: Outdated keys that should not be trusted anymore
