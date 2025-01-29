@@ -1,21 +1,21 @@
 REL=linbit-keyring-$(VERSION)
 
-all: output/keyrings/linbit-keyring.gpg output/sha512sums.txt output/README
+all: output/keyrings/linbit-keyring.gpg output/keyrings/linbit-keyring.asc output/sha512sums.txt output/README
 
-output/keyrings/linbit-keyring.gpg: linbit-keyring-gpg linbit-keyring-gpg/0x*
-	cat linbit-keyring-gpg/0x* > output/keyrings/linbit-keyring.gpg
+output/keyrings/linbit-keyring.%: linbit-keyring-gpg/0x*.%
+	cat $^ > $@
 
-output/keyrings/emeritus-keyring.gpg: emeritus-keyring-gpg emeritus-keyring-gpg/0x*
-	cat emeritus-keyring-gpg/0x* > output/keyrings/emeritus-keyring.gpg
+output/keyrings/emeritus-keyring.%: emeritus-keyring-gpg/0x*.%
+	cat $^ > $@
 
-output/sha512sums.txt: output/keyrings/linbit-keyring.gpg
+output/sha512sums.txt: output/keyrings/linbit-keyring.gpg output/keyrings/linbit-keyring.asc
 	cd output; sha512sum keyrings/* > sha512sums.txt
 
 output/README: README
 	cp README output/
 
 clean:
-	rm -f output/keyrings/*.gpg output/sha512sums.txt output/README output/keyrings/*~
+	rm -f output/keyrings/*.gpg output/keyrings/*.asc output/sha512sums.txt output/README output/keyrings/*~
 
 ifndef VERSION
 debrelease:

@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:		linbit-keyring
-Version:	2024.06.18
+Version:	2025.01.29
 Release:	1
 Summary:	LINBIT keyring
 BuildArch:	noarch
@@ -22,7 +22,7 @@ make %{?_smp_mflags}
 
 
 %install
-install -D -m644 %{_builddir}/%{name}-%{version}/output/keyrings/linbit-keyring.gpg %{buildroot}/etc/pki/rpm-gpg/RPM-GPG-KEY-linbit
+install -D -m644 %{_builddir}/%{name}-%{version}/output/keyrings/linbit-keyring.asc %{buildroot}/etc/pki/rpm-gpg/RPM-GPG-KEY-linbit
 
 
 %files
@@ -30,5 +30,8 @@ install -D -m644 %{_builddir}/%{name}-%{version}/output/keyrings/linbit-keyring.
 
 
 %changelog
+* Wed Jan 29 2025 Roland Kammerer <roland.kammerer@linbit.com> - 2025.01.29-1
+- New upstream release
+
 * Tue Jun 18 2024 Roland Kammerer <roland.kammerer@linbit.com> - 2024.06.18-1
 - New upstream release

@@ -1,3 +1,9 @@
+linbit-keyring (2025.01.29) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Roland Kammerer <roland.kammerer@linbit.com>  Wed, 29 Jan 2025 10:33:44 +0100
+
 linbit-keyring (2024.06.18) unstable; urgency=medium
 
   * Initial release
