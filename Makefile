@@ -3,10 +3,10 @@ REL=linbit-keyring-$(VERSION)
 all: output/keyrings/linbit-keyring.gpg output/keyrings/linbit-keyring.asc output/sha512sums.txt output/README
 
 output/keyrings/linbit-keyring.%: linbit-keyring-gpg/0x*.%
-	cat $^ > $@
+	cat $(sort $^) > $@
 
 output/keyrings/emeritus-keyring.%: emeritus-keyring-gpg/0x*.%
-	cat $^ > $@
+	cat $(sort $^) > $@
 
 output/sha512sums.txt: output/keyrings/linbit-keyring.gpg output/keyrings/linbit-keyring.asc
 	cd output; sha512sum keyrings/* > sha512sums.txt
